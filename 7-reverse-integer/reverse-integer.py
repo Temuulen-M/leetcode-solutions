@@ -1,4 +1,3 @@
-__import__("atexit").register(lambda: open("display_runtime.txt", 'w').write('0'))
 class Solution:
     def reverse(self, x: int) -> int:
         INT_MAX = 2**31 - 1
