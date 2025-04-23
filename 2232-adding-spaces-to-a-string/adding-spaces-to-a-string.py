@@ -1,9 +1,11 @@
 class Solution:
     def addSpaces(self, s: str, spaces: List[int]) -> str:
-        result = []
-        space_set = set(spaces)
-        for i in range(len(s)):
-            if i in space_set:
-                result.append(" ")
-            result.append(s[i])
-        return ''.join(result)
+        output = ''
+        space_idx = 0
+        for idx in range(len(s)):
+            if space_idx<len(spaces) and idx == spaces[space_idx]:
+                output += ' '
+                space_idx += 1
+            output += s[idx]
+            idx+=1
+        return output
