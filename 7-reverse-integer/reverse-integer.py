@@ -1,12 +1,13 @@
 class Solution:
     def reverse(self, x: int) -> int:
         res = ''
-        s = str(x)
         sign = 1
 
-        if s[0] == "-":
+        if x < 0:
             sign = -1
-            s = s[1 : ]
+            x *= -1
+
+        s = str(x)
 
         for i in s:
             res = i + res
