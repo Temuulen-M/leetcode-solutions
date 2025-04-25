@@ -7,10 +7,13 @@ class Node:
 """
 
 class Solution:
+    def __init__(self):
+        self.ls = []
     def preorder(self, root: 'Node') -> List[int]:
-        if not root:
-            return []
-        result = [root.val]
-        for child in root.children:
-            result.extend(self.preorder(child))
-        return result
+        if not root: return
+
+        self.ls.append(root.val)
+        for item in root.children:
+            self.preorder(item)
+
+        return self.ls
